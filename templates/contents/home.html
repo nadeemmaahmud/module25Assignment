@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'contents/../base.html' %}
 
 {% block title %}Home{% endblock %}
 
@@ -16,7 +16,9 @@
                     <p class="mt-3">
                         {{ post.content|truncatewords:20 }}<a href="#">Read More</a>
                     </p>
-                    <img src="{{ post.image.url }}" class="img-fluid rounded" alt="">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" class="img-fluid rounded" alt="">
+                    {% endif %}
                     <div class="d-flex justify-content-between mt-3">
                         <button class="btn btn-light w-100 me-2"><i class="bi bi-hand-thumbs-up"></i> Like</button>
                         <button class="btn btn-light w-100 me-2"><i class="bi bi-chat"></i> Comment</button>
